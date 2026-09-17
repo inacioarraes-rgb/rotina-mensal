@@ -1,0 +1,17 @@
+{
+  "name": "Rotina Mensal",
+  "short_name": "Rotina",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0f172a",
+  "description": "Acompanhamento mensal de tarefas e hábitos.",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

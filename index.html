@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0f172a" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Rotina Mensal" />
+  <link rel="manifest" href="./manifest.json?v=4" />
+  <link rel="icon" href="./icon.svg?v=4" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="./icon.svg?v=4" />
+  <title>Rotina Mensal</title>
+  <link rel="stylesheet" href="./styles.css?v=4" />
+</head>
+<body>
+  <div id="app"></div>
+
+  <dialog id="taskDialog" class="dialog">
+    <form id="taskForm" class="modal-card">
+      <div class="modal-head">
+        <div>
+          <p class="eyebrow">TAREFA</p>
+          <h2 id="modalTitle">Nova tarefa</h2>
+        </div>
+        <button class="icon-button" type="button" id="closeModal" aria-label="Fechar">×</button>
+      </div>
+
+      <div class="form-grid">
+        <label>
+          <span>Nome</span>
+          <input id="taskName" required placeholder="Ex.: Academia" />
+        </label>
+
+        <label>
+          <span>Descrição</span>
+          <textarea id="taskDescription" placeholder="Opcional"></textarea>
+        </label>
+
+        <label>
+          <span>Categoria</span>
+          <input id="taskCategory" placeholder="Ex.: Saúde" />
+        </label>
+
+        <label>
+          <span>Frequência</span>
+          <select id="taskFrequency">
+            <option value="daily">Todos os dias</option>
+            <option value="weekdays">Dias da semana</option>
+            <option value="monthdays">Dias específicos do mês</option>
+          </select>
+        </label>
+
+        <div id="weekdaysSection" class="conditional hidden">
+          <span class="label-text">Dias da semana</span>
+          <div class="weekday-grid">
+            <label><input type="checkbox" value="0"><span>Dom</span></label>
+            <label><input type="checkbox" value="1"><span>Seg</span></label>
+            <label><input type="checkbox" value="2"><span>Ter</span></label>
+            <label><input type="checkbox" value="3"><span>Qua</span></label>
+            <label><input type="checkbox" value="4"><span>Qui</span></label>
+            <label><input type="checkbox" value="5"><span>Sex</span></label>
+            <label><input type="checkbox" value="6"><span>Sáb</span></label>
+          </div>
+        </div>
+
+        <label id="monthdaysSection" class="conditional hidden">
+          <span>Dias do mês</span>
+          <input id="monthDays" placeholder="Ex.: 1, 5, 10, 15" />
+        </label>
+      </div>
+
+      <div class="modal-actions">
+        <button class="btn btn-light" type="button" id="cancelModal">Cancelar</button>
+        <button class="btn btn-dark" type="submit">Salvar tarefa</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="./app.js?v=4"></script>
+</body>
+</html>
